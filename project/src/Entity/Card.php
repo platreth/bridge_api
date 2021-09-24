@@ -18,9 +18,14 @@ class Card
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=2)
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $weight;
 
     public function getId(): ?int
     {
@@ -35,6 +40,18 @@ class Card
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getWeight(): ?int
+    {
+        return $this->weight;
+    }
+
+    public function setWeight(int $weight): self
+    {
+        $this->weight = $weight;
 
         return $this;
     }
